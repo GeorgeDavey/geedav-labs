@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>geedav labs</title>
+<meta name="description" content="geedav labs is building Threads of Life, a life simulator that runs in a web browser and tells each life as a memoir, one chapter a year.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Instrument+Sans:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --desk: #ebe4d7; --paper: #fbf8f2; --hairline: #e0d7c7;
+    --ink: #221d18; --ink-soft: #3b342d; --ink-faint: #5d544a;
+    --thread: #8a2e1d; --thread-wash: #f5e5de;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --desk: #15120f; --paper: #1e1a16; --hairline: #373029;
+      --ink: #efe7da; --ink-soft: #ddd3c3; --ink-faint: #b0a593;
+      --thread: #e9a487; --thread-wash: #3b241b;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--desk); color: var(--ink-soft);
+    font: 400 1.125rem/1.6 "Newsreader", Georgia, serif;
+  }
+  .wrap { max-width: 46rem; margin: 0 auto; padding: 0 16px; }
+  header { padding: 28px 0 0; }
+  .lab {
+    font: 600 0.95rem/1 "Instrument Sans", system-ui, sans-serif;
+    letter-spacing: 0.02em; color: var(--ink);
+  }
+  .hero { padding: 72px 0 40px; }
+  .kicker {
+    font: 600 0.75rem/1.4 "Instrument Sans", system-ui, sans-serif;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--thread); margin: 0 0 14px;
+  }
+  h1, h2 { font-family: "Cormorant Garamond", Georgia, serif; color: var(--ink); font-weight: 600; }
+  h1 { font-size: clamp(2.6rem, 8vw, 4.2rem); line-height: 1.02; margin: 0 0 20px; }
+  h2 { font-size: 1.9rem; line-height: 1.15; margin: 0 0 14px; }
+  .lede { font-size: 1.3rem; color: var(--ink); margin: 0 0 18px; }
+  .status {
+    display: inline-block; font: 500 0.8rem/1 "Instrument Sans", system-ui, sans-serif;
+    padding: 8px 12px; border-radius: 999px; background: var(--thread-wash); color: var(--thread);
+  }
+  .card {
+    background: var(--paper); border: 1px solid var(--hairline); border-radius: 6px;
+    padding: 32px clamp(20px, 5vw, 40px); margin: 0 0 24px;
+    box-shadow: 0 18px 40px -28px rgba(34, 29, 24, 0.35);
+  }
+  .card p { margin: 0 0 14px; }
+  .card p:last-child { margin-bottom: 0; }
+  blockquote {
+    margin: 18px 0; padding: 2px 0 2px 18px; border-left: 2px solid var(--thread);
+    font-style: italic; color: var(--ink);
+  }
+  dl { margin: 0; display: grid; grid-template-columns: 9.5rem 1fr; gap: 14px 20px; }
+  dt { font: 600 0.95rem/1.6 "Instrument Sans", system-ui, sans-serif; color: var(--ink); padding-top: 2px; }
+  dd { margin: 0; }
+  @media (max-width: 560px) {
+    dl { grid-template-columns: 1fr; gap: 2px; }
+    dd { margin-bottom: 12px; }
+  }
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+  .item h3 {
+    font: 600 0.95rem/1.4 "Instrument Sans", system-ui, sans-serif; color: var(--ink); margin: 0 0 4px;
+  }
+  .item p { margin: 0; font-size: 1.02rem; }
+  .also { margin-top: 18px; color: var(--ink-faint); font-size: 1rem; }
+  ul.built { margin: 0; padding-left: 1.2em; }
+  ul.built li { margin: 0 0 6px; }
+  footer {
+    padding: 24px 0 48px; color: var(--ink-faint);
+    font: 500 0.85rem/1.5 "Instrument Sans", system-ui, sans-serif;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header><span class="lab">geedav labs</span></header>
+
+    <section class="hero">
+      <p class="kicker">Now building</p>
+      <h1>Threads of Life</h1>
+      <p class="lede">A life simulator that runs in a web browser. You live one life from start to end, and the game tells it as a memoir, with one chapter for each year.</p>
+      <span class="status">In development</span>
+    </section>
+
+    <section class="card">
+      <h2>What the game is trying to do</h2>
+      <p>The main aim is for the game's systems to surprise the player with how deep and true to life they are. Depth here means systems that act on each other. For example:</p>
+      <blockquote>A move to a new club takes your family away from your partner's job.</blockquote>
+      <blockquote>A new manager comes in and does not rate you.</blockquote>
+      <p>The memoir is how the game is told, not the main aim. How often things happen is set to make a better story, not to match national figures.</p>
+    </section>
+
+    <section class="card">
+      <h2>How a year works</h2>
+      <dl>
+        <dt>Moment</dt><dd>Each year may ask you one question. A year with no question is a quiet year.</dd>
+        <dt>Evenings</dt><dd>Each year gives you a small number of free evenings. You spend each one on a card: time with a person, something at work, or something for yourself.</dd>
+        <dt>Result</dt><dd>After each evening, one line says how it went and what changed.</dd>
+        <dt>Small things</dt><dd>Home life and keeping up a hobby happen without using an evening.</dd>
+        <dt>Chapter</dt><dd>At the end of the year, the memoir gets a new page with a title and what happened.</dd>
+        <dt>Epilogue</dt><dd>When the life ends, the game looks back over all of it.</dd>
+      </dl>
+    </section>
+
+    <section class="card">
+      <h2>What is in the game</h2>
+      <div class="grid">
+        <div class="item"><h3>People</h3><p>Friends and family can slowly grow apart from you if you leave them be. When someone's life changes, a card about it may come up.</p></div>
+        <div class="item"><h3>Romance and family</h3><p>A relationship moves through steps, and can lead to children.</p></div>
+        <div class="item"><h3>Work</h3><p>Each career follows a track. On the Ladder track you move up through standing and promotion. On the Sport track you play seasons, and your form and your body decide how it goes.</p></div>
+        <div class="item"><h3>Team sport</h3><p>Four divisions, clubs that go up and down, contracts, offers from other clubs, and managers who can be sacked.</p></div>
+        <div class="item"><h3>Individual sport</h3><p>A world ranking in place of a league.</p></div>
+        <div class="item"><h3>The town</h3><p>A town paper that prints only in a year when you make the news or something important happens.</p></div>
+      </div>
+      <p class="also">Also: hobbies, school results, money, and a business of your own.</p>
+    </section>
+
+    <section class="card">
+      <h2>How it is built</h2>
+      <ul class="built">
+        <li>Plain HTML, CSS and JavaScript, with no build step and no packages.</li>
+        <li>Runs offline. There is also a one-file version.</li>
+        <li>Old saves keep working when the game changes.</li>
+        <li>Tests, and a script that plays lives by itself to check how they unfold.</li>
+        <li>Built with Claude Code.</li>
+      </ul>
+    </section>
+
+    <footer>© 2026 geedav labs</footer>
+  </div>
+</body>
+</html>
